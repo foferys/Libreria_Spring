@@ -1,0 +1,42 @@
+package com.generation.libreria.dao;
+import java.util.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import dao.Database;
+
+public class DAOLibri
+{
+	@Autowired
+	private Database db;
+	
+	public List<Map<String,String>> read(String query, String... params) {
+		return db.rows(query, params);
+	}
+	
+	public List<Map<String,String>> leggiTutti(){
+		
+		return read("select * from libri");
+	}
+	
+	public boolean create(Map<String, String> m){
+		
+		String query = "insert into libri (autore,titolo) values (?,?);";
+		return db.update(query, m.get("autore"), m.get("titolo"));
+	}
+	
+	public boolean update(Map<String, String> m) {
+		
+		String query = "update libri set autore = ?, titolo = ? where id = ?;";
+		return db.update(query, m.get("autore"), m.get("titolo"), m.get("id"));
+	}
+	
+	public boolean delete(int id)
+	{
+		String query = "delete from libri where id = ?";
+		return db.update(query, id + "");
+	}
+	
+	public Map<String,String> cercaPerId(int id)
+	{
+		return db.row("select * from libri where id = ?;", id + "");
+	}
+}

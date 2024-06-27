@@ -1,0 +1,3 @@
+INDEX VERSION 1.134
+/Users/utente/Documents/2024/_dev_mac/corso/java/Libreria_spring/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/2858556046.index
+/libreria/src/main/java

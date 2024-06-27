@@ -1,0 +1,22 @@
+package com.generation.libreria;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Scope;
+import com.generation.libreria.dao.DAOLibri;
+import dao.Database;
+
+@Configuration
+public class Context
+{
+	@Bean
+	@Scope("singleton")
+	public Database db() {
+		return new Database("springlibreria","root","");
+	}
+	
+	@Bean
+	public DAOLibri dl()
+	{
+		return new DAOLibri();
+	}
+}

@@ -1,0 +1,24 @@
+package com.generation.libreria.controllers;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+@Controller //<--- Annotation per dire che è un controller e che questa classe gestisce le request e le response 
+//è una servlet e non sarà l'unica servlet, possiamo crearne altre mettendo l'annotation @Controller
+public class HomeController {
+	//gestisce tutte le richieste della home -> sarà la index
+	
+	@GetMapping("")	//localhost:8080/
+	public String home() {
+		
+		return "home.html";
+	}
+	
+	@GetMapping("/stampa")
+	@ResponseBody
+	public String test() {
+		return "Ciao!";
+	}
+	
+	
+}

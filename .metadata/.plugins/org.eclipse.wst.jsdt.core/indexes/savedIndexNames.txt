@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+/Users/utente/Documents/2024/_dev_mac/corso/java/Libreria_spring/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+2831205199.index
+2858556046.index
+3083839566.index
+860649817.index
+3003470131.index
+822264527.index
+1107450564.index
