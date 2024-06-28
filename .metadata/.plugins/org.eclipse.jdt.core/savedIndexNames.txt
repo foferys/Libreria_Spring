@@ -9,7 +9,6 @@ INDEX VERSION 1.134+/Users/utente/Documents/2024/_dev_mac/corso/java/Libreria_sp
 4241373744.index
 769280721.index
 1477141417.index
-2653721900.index
 1377867196.index
 1710354991.index
 1159354323.index
