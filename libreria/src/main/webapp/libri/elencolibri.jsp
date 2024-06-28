@@ -38,5 +38,13 @@
 		</table> 
 		
 		<h1><%= parola %></h1>
+		
+		
+		<form action="libromarco" method="post"> <!-- esempio con post -->
+			CERCA PER NOME <input type="text" name="autore" placeholder="quali lettere contiene?"><br>
+			<input type="submit" value="Cerca">
+		</form>
+		
+		
 	</body>
 </html>

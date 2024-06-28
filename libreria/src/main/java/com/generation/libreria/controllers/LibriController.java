@@ -1,9 +1,11 @@
 package com.generation.libreria.controllers;
+import java.util.List;
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -114,4 +116,23 @@ public class LibriController {
 		else
 			return "Errore nell'inserimento del nuovo libro";
 	}
+	
+	
+	
+	//prova di mapping che prende una parola (form in elencolivbri) e cerca nel database dal daolibri
+	//esempio con postMapping per non passare dati visibili
+	@PostMapping("libromarco") // http://localhost:8080/libri/libromarco?autore=aut
+	public String libroMarco(@RequestParam("autore") String parola, Model model) {
+		
+		List<Map<String, String>> listaEl = dl.cerca(parola);
+
+		model.addAttribute("par",listaEl);
+		model.addAttribute("parCercata",parola);
+		return "parolacercata.jsp";
+		
+		//vedi mapping dettaglio
+	}
+	
+	
+	
 }

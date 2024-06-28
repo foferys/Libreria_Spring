@@ -14,7 +14,9 @@ public class DAOLibri {
 	@Autowired
 	private Database db;
 	
+	
 	public List<Map<String,String>> read(String query, String... params) {
+		
 		return db.rows(query, params);
 	}
 	
@@ -46,7 +48,15 @@ public class DAOLibri {
 		return db.row("select * from libri where id = ?;", id + "");
 	}
 	
-	
-	
+	//prova dell'ultimo mapping in LibriController
+	public List<Map<String, String>> cerca(String parola) {
+
+		List<Map<String, String>> dalDb = read("select * from libri where autore like '%"+parola+"%';");
+//	    return db.row("select * from libri where autore like '%?%';", parola + "");
+		System.out.println(dalDb);
+
+		return dalDb;
+	}
+
 	
 }

@@ -8071,3 +8071,964 @@ java.lang.NoSuchFieldError: ES6
 	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
 	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
 	at java.base/java.lang.Thread.run(Thread.java:840)
+!SESSION 2024-06-28 09:01:31.612 -----------------------------------------------
+eclipse.buildId=4.31.0.20240307-1200
+java.version=17.0.10
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=aarch64, WS=cocoa, NL=it_IT
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/utente/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch aarch64 -product org.eclipse.epp.package.java.product -keyring /Users/utente/.eclipse_keyring
+
+!ENTRY org.eclipse.eclemma.core 4 0 2024-06-28 09:01:33.038
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.eclemma.core [145]
+  Unresolved requirement: Require-Bundle: org.jacoco.report; bundle-version="[0.8.11,0.8.12)"
+    -> Bundle-SymbolicName: org.jacoco.report; bundle-version="0.8.11.202310140853"
+       org.jacoco.report [481]
+         Unresolved requirement: Import-Package: org.jacoco.core.runtime; version="[0.8.11,0.8.12)"
+           -> Export-Package: org.jacoco.core.runtime; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.data,org.objectweb.asm"
+              org.jacoco.core [480]
+         Unresolved requirement: Import-Package: org.jacoco.core.data; version="[0.8.11,0.8.12)"
+           -> Export-Package: org.jacoco.core.data; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.internal.data"
+         Unresolved requirement: Import-Package: org.jacoco.core.analysis; version="[0.8.11,0.8.12)"
+           -> Export-Package: org.jacoco.core.analysis; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.data,org.jacoco.core.internal.analysis"
+         Unresolved requirement: Import-Package: org.jacoco.core; version="[0.8.11,0.8.12)"
+           -> Export-Package: org.jacoco.core; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"
+  Unresolved requirement: Require-Bundle: org.jacoco.core; bundle-version="[0.8.11,0.8.12)"
+    -> Bundle-SymbolicName: org.jacoco.core; bundle-version="0.8.11.202310140853"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.7.0"; osgi.identity="org.objectweb.asm"] via two dependency chains.
+
+Chain 1:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=9.6.0)(!(version>=9.7.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm.commons)(&(version>=9.6.0)(!(version>=9.7.0))))
+     |
+    export: osgi.wiring.package=org.objectweb.asm.commons; uses:=org.objectweb.asm
+  org.objectweb.asm.commons [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm.commons"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(version>=9.6.0))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.7.0"; osgi.identity="org.objectweb.asm"]
+	at org.eclipse.osgi.container.Module.start(Module.java:493)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:2073)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:143)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:2064)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:2004)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1967)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1883)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:341)
+
+!ENTRY org.eclipse.eclemma.ui 4 0 2024-06-28 09:01:33.039
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.eclemma.ui [147]
+  Unresolved requirement: Require-Bundle: org.jacoco.core; bundle-version="[0.8.11,0.8.12)"
+    -> Bundle-SymbolicName: org.jacoco.core; bundle-version="0.8.11.202310140853"
+       org.jacoco.core [480]
+  Unresolved requirement: Require-Bundle: org.eclipse.eclemma.core
+    -> Bundle-SymbolicName: org.eclipse.eclemma.core; bundle-version="3.1.8.202312121452"; singleton:="true"
+       org.eclipse.eclemma.core [145]
+         Unresolved requirement: Require-Bundle: org.jacoco.report; bundle-version="[0.8.11,0.8.12)"
+           -> Bundle-SymbolicName: org.jacoco.report; bundle-version="0.8.11.202310140853"
+              org.jacoco.report [481]
+                Unresolved requirement: Import-Package: org.jacoco.core.runtime; version="[0.8.11,0.8.12)"
+                  -> Export-Package: org.jacoco.core.runtime; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.data,org.objectweb.asm"
+                Unresolved requirement: Import-Package: org.jacoco.core.data; version="[0.8.11,0.8.12)"
+                  -> Export-Package: org.jacoco.core.data; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.internal.data"
+                Unresolved requirement: Import-Package: org.jacoco.core.analysis; version="[0.8.11,0.8.12)"
+                  -> Export-Package: org.jacoco.core.analysis; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.data,org.jacoco.core.internal.analysis"
+                Unresolved requirement: Import-Package: org.jacoco.core; version="[0.8.11,0.8.12)"
+                  -> Export-Package: org.jacoco.core; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"
+         Unresolved requirement: Require-Bundle: org.jacoco.core; bundle-version="[0.8.11,0.8.12)"
+           -> Bundle-SymbolicName: org.jacoco.core; bundle-version="0.8.11.202310140853"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.7.0"; osgi.identity="org.objectweb.asm"] via two dependency chains.
+
+Chain 1:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=9.6.0)(!(version>=9.7.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm.commons)(&(version>=9.6.0)(!(version>=9.7.0))))
+     |
+    export: osgi.wiring.package=org.objectweb.asm.commons; uses:=org.objectweb.asm
+  org.objectweb.asm.commons [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm.commons"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(version>=9.6.0))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.7.0"; osgi.identity="org.objectweb.asm"]
+	at org.eclipse.osgi.container.Module.start(Module.java:493)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:2073)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:143)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:2064)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:2004)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1967)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1883)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:341)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 12:04:15.013
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 12:04:15.068
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 12:04:33.174
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 12:04:36.008
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 12:07:48.898
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 12:08:52.911
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 12:09:10.804
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 12:09:42.439
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 12:34:21.337
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 12:34:25.571
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 12:34:44.754
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 12:34:51.695
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 12:34:59.038
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 12:35:24.914
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2024-06-28 12:50:44.377
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/application-client_9.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2024-06-28 12:50:44.377
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/jobXML_2_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2024-06-28 12:50:44.377
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jakartaee/beans_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2024-06-28 12:50:44.377
+!MESSAGE The given URI https://jakarta.ee/xml/ns/jaxb/bindingschema_3_0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2024-06-28 12:50:44.379
+!MESSAGE The given URI https://jakarta.ee/xml/ns/validation/validation-configuration-3.0.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.wildwebdeveloper.xml 2 0 2024-06-28 12:50:44.380
+!MESSAGE The given URI http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_1.xsd from org.eclipse.jst.standard.schemas could not be resolved for local access
+
+!ENTRY org.eclipse.jdt.core 4 4 2024-06-28 13:53:36.361
+!MESSAGE Could not retrieve superclass
+!STACK 0
+org.eclipse.jdt.internal.compiler.problem.AbortCompilation: Pb(347) The type com.google.protobuf.GeneratedMessageV3 cannot be resolved. It is indirectly referenced from required type com.mysql.cj.x.protobuf.MysqlxCrud.Limit
+	at org.eclipse.jdt.internal.compiler.problem.ProblemHandler.handle(ProblemHandler.java:161)
+	at org.eclipse.jdt.internal.compiler.problem.ProblemHandler.handle(ProblemHandler.java:228)
+	at org.eclipse.jdt.internal.compiler.problem.ProblemReporter.handle(ProblemReporter.java:2693)
+	at org.eclipse.jdt.internal.compiler.problem.ProblemReporter.isClassPathCorrect(ProblemReporter.java:5185)
+	at org.eclipse.jdt.internal.compiler.lookup.UnresolvedReferenceBinding.resolve(UnresolvedReferenceBinding.java:125)
+	at org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding.resolveType(BinaryTypeBinding.java:251)
+	at org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding.superclass(BinaryTypeBinding.java:2466)
+	at org.eclipse.jdt.core.dom.TypeBinding.getSuperclass(TypeBinding.java:858)
+	at org.eclipse.jdt.internal.ui.text.correction.UnresolvedElementsBaseSubProcessor.isInherited(UnresolvedElementsBaseSubProcessor.java:1015)
+	at org.eclipse.jdt.internal.ui.text.correction.UnresolvedElementsBaseSubProcessor.addSimilarTypeProposals(UnresolvedElementsBaseSubProcessor.java:983)
+	at org.eclipse.jdt.internal.ui.text.correction.UnresolvedElementsBaseSubProcessor.collectTypeProposals(UnresolvedElementsBaseSubProcessor.java:742)
+	at org.eclipse.jdt.internal.ui.text.correction.UnresolvedElementsSubProcessor.getTypeProposals(UnresolvedElementsSubProcessor.java:144)
+	at org.eclipse.jdt.internal.ui.text.correction.QuickFixProcessor.process(QuickFixProcessor.java:455)
+	at org.eclipse.jdt.internal.ui.text.correction.QuickFixProcessor.getCorrections(QuickFixProcessor.java:378)
+	at org.eclipse.jdt.internal.ui.text.correction.JavaCorrectionProcessor$SafeCorrectionCollector.safeRun(JavaCorrectionProcessor.java:381)
+	at org.eclipse.jdt.internal.ui.text.correction.JavaCorrectionProcessor$SafeCorrectionProcessorAccess.run(JavaCorrectionProcessor.java:341)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:47)
+	at org.eclipse.jdt.internal.ui.text.correction.JavaCorrectionProcessor$SafeCorrectionProcessorAccess.process(JavaCorrectionProcessor.java:336)
+	at org.eclipse.jdt.internal.ui.text.correction.JavaCorrectionProcessor.collectCorrections(JavaCorrectionProcessor.java:465)
+	at org.eclipse.jdt.internal.ui.text.java.hover.ProblemHover$ProblemInfo.getJavaAnnotationFixes(ProblemHover.java:115)
+	at org.eclipse.jdt.internal.ui.text.java.hover.ProblemHover$ProblemInfo.computeCompletionProposals(ProblemHover.java:89)
+	at org.eclipse.jdt.internal.ui.text.java.hover.ProblemHover$ProblemInfo.<init>(ProblemHover.java:74)
+	at org.eclipse.jdt.internal.ui.text.java.hover.ProblemHover.createAnnotationInfo(ProblemHover.java:178)
+	at org.eclipse.jdt.internal.ui.text.java.hover.AbstractAnnotationHover.getHoverInfo2(AbstractAnnotationHover.java:755)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:163)
+	at org.eclipse.jdt.internal.ui.text.java.hover.BestMatchHover.getHoverInfo2(BestMatchHover.java:130)
+	at org.eclipse.jdt.internal.ui.text.java.hover.JavaEditorTextHoverProxy.getHoverInfo2(JavaEditorTextHoverProxy.java:89)
+	at org.eclipse.jface.text.TextViewerHoverManager$1.run(TextViewerHoverManager.java:155)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 14:07:33.545
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 14:08:32.271
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 14:15:05.142
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 14:15:19.797
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 14:15:33.944
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 14:16:15.261
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 14:16:24.704
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 14:16:38.472
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 14:16:54.875
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 14:17:08.141
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 14:18:03.563
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 14:18:13.649
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 14:22:40.746
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 14:23:56.498
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 14:25:18.224
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 14:25:31.863
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 14:29:11.412
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 14:30:51.216
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 14:30:57.428
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 14:31:13.445
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 14:32:12.269
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 14:33:17.851
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 14:33:51.195
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 14:34:04.965
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 14:34:16.591
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 14:35:25.334
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 14:36:08.548
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 14:37:31.160
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+!SESSION 2024-06-28 15:46:04.528 -----------------------------------------------
+eclipse.buildId=4.31.0.20240307-1200
+java.version=17.0.10
+java.vendor=Eclipse Adoptium
+BootLoader constants: OS=macosx, ARCH=aarch64, WS=cocoa, NL=it_IT
+Framework arguments:  -product org.eclipse.epp.package.java.product -keyring /Users/utente/.eclipse_keyring
+Command-line arguments:  -os macosx -ws cocoa -arch aarch64 -product org.eclipse.epp.package.java.product -keyring /Users/utente/.eclipse_keyring
+
+!ENTRY org.eclipse.eclemma.core 4 0 2024-06-28 15:46:05.620
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.eclemma.core [145]
+  Unresolved requirement: Require-Bundle: org.jacoco.report; bundle-version="[0.8.11,0.8.12)"
+    -> Bundle-SymbolicName: org.jacoco.report; bundle-version="0.8.11.202310140853"
+       org.jacoco.report [481]
+         Unresolved requirement: Import-Package: org.jacoco.core.data; version="[0.8.11,0.8.12)"
+           -> Export-Package: org.jacoco.core.data; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.internal.data"
+              org.jacoco.core [480]
+         Unresolved requirement: Import-Package: org.jacoco.core.runtime; version="[0.8.11,0.8.12)"
+           -> Export-Package: org.jacoco.core.runtime; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.data,org.objectweb.asm"
+         Unresolved requirement: Import-Package: org.jacoco.core.analysis; version="[0.8.11,0.8.12)"
+           -> Export-Package: org.jacoco.core.analysis; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.data,org.jacoco.core.internal.analysis"
+         Unresolved requirement: Import-Package: org.jacoco.core; version="[0.8.11,0.8.12)"
+           -> Export-Package: org.jacoco.core; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"
+  Unresolved requirement: Require-Bundle: org.jacoco.core; bundle-version="[0.8.11,0.8.12)"
+    -> Bundle-SymbolicName: org.jacoco.core; bundle-version="0.8.11.202310140853"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.7.0"; osgi.identity="org.objectweb.asm"] via two dependency chains.
+
+Chain 1:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=9.6.0)(!(version>=9.7.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm.commons)(&(version>=9.6.0)(!(version>=9.7.0))))
+     |
+    export: osgi.wiring.package=org.objectweb.asm.commons; uses:=org.objectweb.asm
+  org.objectweb.asm.commons [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm.commons"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(version>=9.6.0))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.7.0"; osgi.identity="org.objectweb.asm"]
+	at org.eclipse.osgi.container.Module.start(Module.java:493)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:2073)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:143)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:2064)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:2004)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1967)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1883)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:341)
+
+!ENTRY org.eclipse.eclemma.ui 4 0 2024-06-28 15:46:05.622
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.eclemma.ui [147]
+  Unresolved requirement: Require-Bundle: org.jacoco.core; bundle-version="[0.8.11,0.8.12)"
+    -> Bundle-SymbolicName: org.jacoco.core; bundle-version="0.8.11.202310140853"
+       org.jacoco.core [480]
+  Unresolved requirement: Require-Bundle: org.eclipse.eclemma.core
+    -> Bundle-SymbolicName: org.eclipse.eclemma.core; bundle-version="3.1.8.202312121452"; singleton:="true"
+       org.eclipse.eclemma.core [145]
+         Unresolved requirement: Require-Bundle: org.jacoco.report; bundle-version="[0.8.11,0.8.12)"
+           -> Bundle-SymbolicName: org.jacoco.report; bundle-version="0.8.11.202310140853"
+              org.jacoco.report [481]
+                Unresolved requirement: Import-Package: org.jacoco.core.data; version="[0.8.11,0.8.12)"
+                  -> Export-Package: org.jacoco.core.data; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.internal.data"
+                Unresolved requirement: Import-Package: org.jacoco.core.runtime; version="[0.8.11,0.8.12)"
+                  -> Export-Package: org.jacoco.core.runtime; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.data,org.objectweb.asm"
+                Unresolved requirement: Import-Package: org.jacoco.core.analysis; version="[0.8.11,0.8.12)"
+                  -> Export-Package: org.jacoco.core.analysis; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"; uses:="org.jacoco.core.data,org.jacoco.core.internal.analysis"
+                Unresolved requirement: Import-Package: org.jacoco.core; version="[0.8.11,0.8.12)"
+                  -> Export-Package: org.jacoco.core; bundle-symbolic-name="org.jacoco.core"; bundle-version="0.8.11.202310140853"; version="0.8.11"
+         Unresolved requirement: Require-Bundle: org.jacoco.core; bundle-version="[0.8.11,0.8.12)"
+           -> Bundle-SymbolicName: org.jacoco.core; bundle-version="0.8.11.202310140853"
+  Bundle was not resolved because of a uses constraint violation.
+  org.apache.felix.resolver.reason.ReasonException: Uses constraint violation. Unable to resolve resource org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"] because it is exposed to package 'org.objectweb.asm' from resources org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm"] and org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.7.0"; osgi.identity="org.objectweb.asm"] via two dependency chains.
+
+Chain 1:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(&(version>=9.6.0)(!(version>=9.7.0))))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm"]
+
+Chain 2:
+  org.jacoco.core [osgi.identity; type="osgi.bundle"; version:Version="0.8.11.202310140853"; osgi.identity="org.jacoco.core"]
+    import: (&(osgi.wiring.package=org.objectweb.asm.commons)(&(version>=9.6.0)(!(version>=9.7.0))))
+     |
+    export: osgi.wiring.package=org.objectweb.asm.commons; uses:=org.objectweb.asm
+  org.objectweb.asm.commons [osgi.identity; type="osgi.bundle"; version:Version="9.6.0"; osgi.identity="org.objectweb.asm.commons"]
+    import: (&(osgi.wiring.package=org.objectweb.asm)(version>=9.6.0))
+     |
+    export: osgi.wiring.package: org.objectweb.asm
+  org.objectweb.asm [osgi.identity; type="osgi.bundle"; version:Version="9.7.0"; osgi.identity="org.objectweb.asm"]
+	at org.eclipse.osgi.container.Module.start(Module.java:493)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel$2.run(ModuleContainer.java:2073)
+	at org.eclipse.osgi.internal.framework.EquinoxContainerAdaptor$1$1.execute(EquinoxContainerAdaptor.java:143)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:2064)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:2004)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1967)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1883)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:341)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 16:01:05.302
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 16:01:09.643
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 16:14:39.878
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+
+!ENTRY org.eclipse.wst.jsdt.core 4 4 2024-06-28 16:15:27.413
+!MESSAGE ES6
+!STACK 0
+java.lang.NoSuchFieldError: ES6
+	at org.eclipse.wst.jsdt.internal.compiler.closure.ClosureCompiler.parse(ClosureCompiler.java:112)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.internalCreateAST(ASTParser.java:911)
+	at org.eclipse.wst.jsdt.core.dom.ASTParser.createAST(ASTParser.java:675)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.SourceIndexer.indexDocument(SourceIndexer.java:93)
+	at org.eclipse.wst.jsdt.internal.core.search.JavaSearchParticipant.indexDocument(JavaSearchParticipant.java:79)
+	at org.eclipse.wst.jsdt.web.core.javascript.search.JsSearchParticipant.indexDocument(JsSearchParticipant.java:82)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager.indexDocument(IndexManager.java:325)
+	at org.eclipse.wst.jsdt.internal.core.search.indexing.IndexManager$1.execute(IndexManager.java:728)
+	at org.eclipse.wst.jsdt.internal.core.search.processing.JobManager.run(JobManager.java:393)
+	at java.base/java.lang.Thread.run(Thread.java:840)

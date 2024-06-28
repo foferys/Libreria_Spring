@@ -1,0 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
+<%	List<Map<String, String>> parola = (List<Map<String, String>>) request.getAttribute("par"); %>
+    
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>parola cercata</title>
+</head>
+<body>
+	<h1><%= parola %></h1>
+</body>
+</html>
